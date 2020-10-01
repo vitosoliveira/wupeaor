@@ -64,7 +64,7 @@ Temos os models dessas já setados porém você terá que adicionar alguns campo
 | department | ForeignKey - Department |
 
 
-### Estrutra
+### Estrutura Url
 
 | Model | Url |
 | ------ | ------ |
