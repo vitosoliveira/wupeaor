@@ -96,7 +96,7 @@ Temos os models dessas já setados porém você terá que adicionar alguns campo
 Git
 $ git add .
 $ git commit -m "Comentario"
-$ git push origin master
+$ git push origin main
 Python
 Criar a Virtual Env
 $ virtualenv venv
