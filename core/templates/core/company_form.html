@@ -7,11 +7,10 @@
 <div class="container">
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="{% static 'images/logo.png' %}" alt="Logo Empresa" width="72" height="72">
-        <h2>Adicionar Colaborador</h2>
+        <h2>Adicionar Compania</h2>
     </div>
 
     <div class="row">
-
         <div class="col align-self-center">
             <h4 class="mb-3">Informações</h4>
             <form class="needs-validation" method="POST">
@@ -21,22 +20,10 @@
                         {{ form.name|as_crispy_field }}
                     </div>
                     <div class="col-6">
-                        {{ form.gender|as_crispy_field }}
-                    </div>
-                    <div class="col-6">
-                        {{ form.department|as_crispy_field }}
-                    </div>
-                    <div class="col-6">
-                        {{ form.phone|as_crispy_field }}
-                    </div>
-                    <div class="col-6">
-                        {{ form.salary|as_crispy_field }}
-                    </div>
-                    <div class="col-6">
-                        {{ form.age|as_crispy_field }}
+                        {{ form.legal_number|as_crispy_field }}
                     </div>
                     <div class="col-12">
-                        {{ form.user|as_crispy_field }}
+                        {{ form.logo|as_crispy_field }}
                     </div>
                     <div class="col-2 pt-4">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
