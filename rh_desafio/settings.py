@@ -59,12 +59,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'rh_desafio.wsgi.application'
 
 
-
-DATABASES = { 
-        'default': config(
-            'DATABASE_URL', default=default_dburl, cast=dburl), }
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 
+DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
 
 
 
@@ -98,6 +96,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
