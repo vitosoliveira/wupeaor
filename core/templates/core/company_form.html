@@ -4,16 +4,23 @@
 
 
 {%block conteudo%}
+
+{% if messages %}
+    {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-success" role="alert"{% endif %}>
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
 <div class="container">
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="{% static 'images/logo.png' %}" alt="Logo Empresa" width="72" height="72">
         <h2>Adicionar Compania</h2>
     </div>
-
     <div class="row">
         <div class="col align-self-center">
             <h4 class="mb-3">Informações</h4>
-            <form class="needs-validation" method="POST">
+            <form method="POST">
                 <div class="form-row justify-content-center">
                     {% csrf_token %}
                     <div class="col-6">

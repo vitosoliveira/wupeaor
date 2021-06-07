@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static%}
+
+{%block conteudo%}
+<form method="POST" class="post-form" action="/updateDepart/{{department.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department Id:</label>
+            <div class="col-sm-4">
+                <input type="text" name="id" required maxlength="20" value="{{ department.id }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department Name:</label>
+            <div class="col-sm-4">
+                <input type="text" required name="name" maxlength="100" value="{{ department.name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department Company:</label>
+            <div class="col-sm-4">
+                <input type="text"  required name="lastname" maxlength="100" value="{{ department.company }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department Status:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" name="department" value="{{ department.status }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department adminr:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" name="user" value="{{ department.admin }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{%endblock conteudo%}

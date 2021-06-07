@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static%}
+
+{%block conteudo%}
+<form method="POST" class="post-form" action="/updateEmployee/{{employee.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee Id:</label>
+            <div class="col-sm-4">
+                <input type="text" name="id" required maxlength="20" value="{{ employee.id }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee Name:</label>
+            <div class="col-sm-4">
+                <input type="text" required name="name" maxlength="100" value="{{ employee.name }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee LastName:</label>
+            <div class="col-sm-4">
+                <input type="text"  required name="lastname" maxlength="100" value="{{ employee.lastname }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee department:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" name="department" value="{{ employee.department }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee user:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" name="user" value="{{ employee.user.id }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee gender:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" value="{{ employee.gender }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee phone:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" value="{{ employee.phone }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee salary:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" value="{{ employee.salary }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee age:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" value="{{ employee.age }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee role:</label>
+            <div class="col-sm-4">
+                <input type="text" required maxlength="100" value="{{ employee.role }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{%endblock conteudo%}

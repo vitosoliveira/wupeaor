@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://wupeaor.herokuapp.com/']
+ALLOWED_HOSTS = ['https://wupeaor.herokuapp.com/', '127.0.0.1']
 
 
 INSTALLED_APPS = [
@@ -60,10 +60,16 @@ WSGI_APPLICATION = 'rh_desafio.wsgi.application'
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 
-DATABASES = { 'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
-
-
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'database.sqlite3'),
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -93,6 +99,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+MEDIA_URL = '/media/'
+# APPEND_SLASH=False
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
