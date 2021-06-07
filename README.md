@@ -15,8 +15,5 @@ Platform that register companys, departments and employees.
 
 * unfinished
   * Upload images for company
-  * Upload to heroku application
+  * Upload to heroku application(I tried but, i got some problems with the configuration)
 
-
-
-In the end we generate the rate based report informing the consumer
