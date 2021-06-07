@@ -7,11 +7,11 @@ Platform that register companys, departments and employees.
  * Second: clone the repositore
 
 * About
- * Repositore about a job test
+  * Repositore about a job test
 
 * Done
- * Create, read,update, delete
- * Forms Employee, Company and Department
+  * Create, read,update, delete
+  * Forms Employee, Company and Department
 
 * unfinished
   * Upload images for company
